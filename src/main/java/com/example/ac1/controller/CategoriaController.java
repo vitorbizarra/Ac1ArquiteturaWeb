@@ -21,11 +21,11 @@ public class CategoriaController {
 
     @PostMapping("/")
     public Categoria inserir(@RequestBody Categoria categoria) {
-        return this.categoriaRepository.inserir(categoria);
+        return this.categoriaRepository.save(categoria);
     }
 
     @GetMapping("/")
     public List<Categoria> mostrarTodos() {
-        return this.categoriaRepository.selecionarTodos();
+        return this.categoriaRepository.findAll();
     }
 }
